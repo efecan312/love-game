@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Do You Love Me?</title>
+<title>Beni Seviyor musun?</title>
 <style>
   body {
     font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -22,6 +22,7 @@
     box-shadow: 0 8px 20px rgba(255, 105, 135, 0.4);
     text-align: center;
     max-width: 320px;
+    position: relative;
   }
   h1 {
     color: #ff385c;
@@ -50,6 +51,8 @@
   }
   #noBtn {
     position: absolute;
+    top: 400px;
+    left: 100px;
   }
   #loader, #result {
     margin-top: 20px;
@@ -62,12 +65,12 @@
 </head>
 <body>
   <div id="container">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAPFBMVEUAAAD///////////////////////////////////////////////////////////////////+Aa3MFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEB0lEQVR4nO2b6XLCIBSGYyQx6/3/ZKbhNAt3We+RmqRhzZ6OwIoqCQpMlgu+P4qSiJpbXWYwPjpIhP0Yh5PXSkcgFTLcDYbCztx0QH4pSaAwjONiM0mHLNRBQkmMafhFf8UlQ5Hg8X6ArK2XBDvIp6cIQH0AkJ6ewQ+mPlYTVU1uO4X9A8GcNwOxKhqCH5eJAMCyHtw6ZwIMhD10AQYn7KHXqPGlBGlqYsEV+xhM+Hws04MocLCFqQKHrBu+NQGAka1XMH5BCY0PMm3lgDhwxcWko9JNCeUkCip4byLXhB2qOKfEJIjDlICs2+F3I05L9jwQUoF6xRFr03AFO5Ij0FEqLvAEO8lIR9iCvEeNzYhfgT0WI1A7/5eJNUchVq5Vo7k0N9yPZim0m2ZkP+40Ed4rKGoE43+g5Nn2nORuqX0X+CrQ0URbLhTu8dCJZAfYxCK8EYCN6RHPdYdAW2eEl9pF2Fru8OJfDFAz7FwGfQhQb4CGQ+YGF0sLRXxfphTF3AfDYmXexu8K1fMC29hkQqCvC9x5R3Yg7cLTWsgQJs4shfQ+QWqAnoc+Oykwmf8vJSuBxfIpqE+zIY1Rf6Ik4L31kIVwC/oh7iH5HQsIikAUyoXHtCHjh/psKixPYx1Azv6k5A4kjbH34ECPwD5wzHtF1oHgAAAAASUVORK5CYII=" alt="Heart" />
-    <h1>Do you love me?</h1>
-    <button id="yesBtn">Yes</button>
-    <button id="noBtn" style="top: 400px; left: 100px;">No</button>
-    <div id="loader">Loading your love...</div>
-    <div id="result">I love you too!</div>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAPFBMVEUAAAD///////////////////////////////////////////////////////////////////+Aa3MFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEB0lEQVR4nO2b6XLCIBSGYyQx6/3/ZKbhNAt3We+RmqRhzZ6OwIoqCQpMlgu+P4qSiJpbXWYwPjpIhP0Yh5PXSkcgFTLcDYbCztx0QH4pSaAwjONiM0mHLNRBQkmMafhFf8UlQ5Hg8X6ArK2XBDvIp6cIQH0AkJ6ewQ+mPlYTVU1uO4X9A8GcNwOxKhqCH5eJAMCyHtw6ZwIMhD10AQYn7KHXqPGlBGlqYsEV+xhM+Hws04MocLCFqQKHrBu+NQGAka1XMH5BCY0PMm3lgDhwxcWko9JNCeUkCip4byLXhB2qOKfEJIjDlICs2+F3I05L9jwQUoF6xRFr03AFO5Ij0FEqLvAEO8lIR9iCvEeNzYhfgT0WI1A7/5eJNUchVq5Vo7k0N9yPZim0m2ZkP+40Ed4rKGoE43+g5Nn2nORuqX0X+CrQ0URbLhTu8dCJZAfYxCK8EYCN6RHPdYdAW2eEl9pF2Fru8OJfDFAz7FwGfQhQb4CGQ+YGF0sLRXxfphTF3AfDYmXexu8K1fMC29hkQqCvC9x5R3Yg7cLTWsgQJs4shfQ+QWqAnoc+Oykwmf8vJSuBxfIpqE+zIY1Rf6Ik4L31kIVwC/oh7iH5HQsIikAUyoXHtCHjh/psKixPYx1Azv6k5A4kjbH34ECPwD5wzHtF1oHgAAAAASUVORK5CYII=" alt="Kalpli Ayıcık" />
+    <h1>Beni seviyor musun?</h1>
+    <button id="yesBtn">Evet</button>
+    <button id="noBtn">Hayır</button>
+    <div id="loader">Sevgini yüklüyorum...</div>
+    <div id="result">Ben de seni seviyorum!</div>
   </div>
 
 <script>
