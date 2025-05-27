@@ -1,69 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Do You Love Me?</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #ffd6e0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    #questionContainer {
-      text-align: center;
-    }
-
-    #questionContainer img {
-      width: 150px;
-    }
-
-    h1 {
-      font-size: 2em;
-      color: #333;
-      margin: 20px 0;
-    }
-
-    button {
-      padding: 10px 20px;
-      margin: 10px;
-      font-size: 1em;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: 0.2s ease;
-    }
-
-    #yesBtn {
-      background-color: #ff6b81;
-      color: white;
-    }
-
-    #noBtn {
-      background-color: #aaa;
-      color: white;
-      position: absolute;
-    }
-
-    #heartLoader {
-      display: none;
-      margin-top: 20px;
-    }
-
-    #resultContainer {
-      display: none;
-      margin-top: 20px;
-      font-size: 1.5em;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Do You Love Me?</title>
+<style>
+  body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #fbc7c7, #ff99ac);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #container {
+    background: white;
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(255, 105, 135, 0.4);
+    text-align: center;
+    max-width: 320px;
+  }
+  h1 {
+    color: #ff385c;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+  }
+  img {
+    width: 140px;
+    margin-bottom: 20px;
+    user-select: none;
+  }
+  button {
+    background: #ff385c;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    margin: 10px;
+    border-radius: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    user-select: none;
+  }
+  button:hover {
+    background: #ff1e3d;
+  }
+  #noBtn {
+    position: absolute;
+  }
+  #loader, #result {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ff385c;
+    font-size: 1.3em;
+    display: none;
+  }
+</style>
 </head>
 <body>
+  <div id="container">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAAPFBMVEUAAAD///////////////////////////////////////////////////////////////////+Aa3MFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEB0lEQVR4nO2b6XLCIBSGYyQx6/3/ZKbhNAt3We+RmqRhzZ6OwIoqCQpMlgu+P4qSiJpbXWYwPjpIhP0Yh5PXSkcgFTLcDYbCztx0QH4pSaAwjONiM0mHLNRBQkmMafhFf8UlQ5Hg8X6ArK2XBDvIp6cIQH0AkJ6ewQ+mPlYTVU1uO4X9A8GcNwOxKhqCH5eJAMCyHtw6ZwIMhD10AQYn7KHXqPGlBGlqYsEV+xhM+Hws04MocLCFqQKHrBu+NQGAka1XMH5BCY0PMm3lgDhwxcWko9JNCeUkCip4byLXhB2qOKfEJIjDlICs2+F3I05L9jwQUoF6xRFr03AFO5Ij0FEqLvAEO8lIR9iCvEeNzYhfgT0WI1A7/5eJNUchVq5Vo7k0N9yPZim0m2ZkP+40Ed4rKGoE43+g5Nn2nORuqX0X+CrQ0URbLhTu8dCJZAfYxCK8EYCN6RHPdYdAW2eEl9pF2Fru8OJfDFAz7FwGfQhQb4CGQ+YGF0sLRXxfphTF3AfDYmXexu8K1fMC29hkQqCvC9x5R3Yg7cLTWsgQJs4shfQ+QWqAnoc+Oykwmf8vJSuBxfIpqE+zIY1Rf6Ik4L31kIVwC/oh7iH5HQsIikAUyoXHtCHjh/psKixPYx1Azv6k5A4kjbH34ECPwD5wzHtF1oHgAAAAASUVORK5CYII=" alt="Heart" />
+    <h1>Do you love me?</h1>
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn" style="top: 400px; left: 100px;">No</button>
+    <div id="loader">Loading your love...</div>
+    <div id="result">I love you too!</div>
+  </div>
 
-  <div id="questionContainer">
-    <img src="images/heart.png" alt="cute image
+<script>
+  const noBtn = document.getElementById('noBtn');
+  const yesBtn = document.getElementById('yesBtn');
+  const loader = document.getElementById('loader');
+  const result = document.getElementById('result');
+
+  noBtn.addEventListener('mouseover', () => {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+  });
+
+  yesBtn.addEventListener('click', () => {
+    loader.style.display = 'block';
+    result.style.display = 'none';
+    setTimeout(() => {
+      loader.style.display = 'none';
+      result.style.display = 'block';
+    }, 3000);
+  });
+</script>
+</body>
+</html>
